@@ -40,16 +40,16 @@ public class GestorProva extends HttpServlet {
         
         Game u=new Game();
         GameDAO ud=new GameDAO();
-        u.setName("prova");
-        u.setDeveloper("prova");
-        u.setCategory("11");
+        u.setName("pruebaa");
+        u.setDeveloper("paco");
+        u.setCategory("12");
         ud.insertGame(u);
         
         User g=new User();
         UserDAO gd=new UserDAO();
-        g.setNick("prova");
-        g.setEmail("prova");
-        g.setPassword("11");
+        g.setNick("manolo");
+        g.setEmail("prodfjd");
+        g.setPassword("15");
         gd.insertUser(g);
         
         Game game=ud.queryGame(u);
@@ -60,9 +60,10 @@ public class GestorProva extends HttpServlet {
         e.setIdgame(game);
         e.setIduser(user);
         ed.insertTransaction(e);
+       
+        System.out.println("Soy el xavi, este es mi pull!");
         
-        System.out.println("Hey");
-        
+        System.out.println("Soy el xavi, este es mi pull!");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
