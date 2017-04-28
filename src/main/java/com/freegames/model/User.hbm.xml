@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.freegames.model.User" table="user"/>
+        <id name="id" type="int">
+            <column name="id" precision="5" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="nick" type="string">
+            <column name="nick" length="200" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="200" not-null="true" />
+        </property>
+        <property name="mail" type="string">
+            <column name="mail" length="200" not-null="true" />
+        </property>
+        <set name="games" table="Transaction"  cascade="all" inverse="false"  >
+          <key>
+             <column name="iduser" />
+          </key>
+         <many-to-many column="idgame" class="com.freegames.model.Game" />
+        </set>    
+    </class>
+</hibernate-mapping>
