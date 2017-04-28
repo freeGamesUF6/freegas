@@ -1,0 +1,40 @@
+body{
+    background-color: white;
+}
+
+
+.header .jumbotron{
+    background-color: #A4A4A4;
+    color: white;
+    padding-left: 25%;
+    
+}
+.form-inline{
+	margin-left: 25%;
+}
+
+
+
+
+.footer-content{
+	text-align: center;
+	margin: 0px;
+	color: white;
+}
+
+.panel-footer{
+	background-color: black;
+	padding: 0px;
+	position: fixed;
+	bottom:0;
+	width:100%	;
+}
+.container-fluid{
+	padding: 0px;
+}
+
+
+.formRegistro{
+	
+}
+
