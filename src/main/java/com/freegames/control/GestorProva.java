@@ -64,6 +64,30 @@ public class GestorProva extends HttpServlet {
         System.out.println("Soy el xavi, este es mi pull!");
         
         System.out.println("Soy el xavi, este es mi pull!");
+        u.setName("prova");
+        u.setDeveloper("prova");
+        u.setCategory("11");
+        ud.insertGame(u);
+        
+        User g=new User();
+        UserDAO gd=new UserDAO();
+        g.setNick("prova");
+        g.setEmail("prova");
+        g.setPassword("11");
+        gd.insertUser(g);
+        
+        Game game=ud.queryGame(u);
+        User user=gd.queryUser(g);
+        System.out.println(game.getId()+"-"+user.getId());
+        Transaction e=new Transaction();
+        TransactionDAO ed=new TransactionDAO();
+        e.setIdgame(game);
+        e.setIduser(user);
+        ed.insertTransaction(e);
+        
+        System.out.println("Hey");
+        
+        //sdfsdf
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
