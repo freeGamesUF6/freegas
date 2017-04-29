@@ -13,6 +13,7 @@ import javax.persistence.Table;
 /**
  *
  * @author Xavier
+ * @version 1.0
  */
 @Entity
 @Table(name="transaction")
