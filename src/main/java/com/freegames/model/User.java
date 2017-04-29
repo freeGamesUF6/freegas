@@ -11,6 +11,7 @@ import javax.persistence.*;
 /**
  *
  * @author Xavier
+ * @version 1.0
  */
 @Entity
 @Table(name="user")

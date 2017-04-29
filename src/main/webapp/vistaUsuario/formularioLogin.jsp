@@ -19,7 +19,7 @@
         <div class="container-fluid">
 
             <div class="form-inline">
-                <jsp:useBean id="logueo" scope="request" class="model.User"></jsp:useBean>
+                <jsp:useBean id="login" scope="request" class="com.freegames.model.User"></jsp:useBean>
                 <jsp:setProperty name="logueo" property="*" />
                 <% if (request.getParameter("nick") == null) {%>
 

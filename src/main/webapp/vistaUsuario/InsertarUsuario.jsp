@@ -16,7 +16,7 @@
         <title>FreeGames</title>
     </head>
     <body>
-        <jsp:useBean id="registro" scope="request" class="model.User"></jsp:useBean>
+        <jsp:useBean id="registro" scope="request" class="com.freegames.model.User"></jsp:useBean>
         <jsp:setProperty name="registro" property="*" />
         <% if (request.getParameter("nick") == null) {%>
 
