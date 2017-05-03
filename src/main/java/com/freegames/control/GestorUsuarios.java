@@ -39,14 +39,17 @@ public class GestorUsuarios extends HttpServlet{
 
             //si l'accio es loguin accedeix aqui
             if (op.equals("login")) {
-                //a traves de usebeans pasem els atributs de l'objecte directament. 
+                //a traves de usebeans pasem els atributs de l'objecte directament.
+                //User u es el que rebem del formulari
                 User u = (User) request.getAttribute("logueo");
                 UserDAO uDao =new  UserDAO();
+                //User u2 es el que agafem de la BBDD
                 User u2=uDao.queryUser(u);
                 if(u2!=null){
                     if (u2.getPassword().equals(u.getPassword())) {
                         //JSP a la que se le redirige si el login es OK!
-                        
+                        request.getSession().setAttribute("mail", u2.getEmail());
+                        request.getSession().setAttribute("nickname", u2.getNick());
                         RequestDispatcher rd = request.getRequestDispatcher("listGames.jsp");
                         rd.forward(request, response);
                     }else{
@@ -62,6 +65,9 @@ public class GestorUsuarios extends HttpServlet{
                 //comprovem si el nick esta disponible
                 if (comprovador==null) {
                     //JSP a la que se le redirige si el login es OK!
+                     
+                    request.getSession().setAttribute("mail", comprovador.getEmail());
+                    request.getSession().setAttribute("nickname", comprovador.getNick());
                     RequestDispatcher rd = request.getRequestDispatcher("listGames.jsp");
                     rd.forward(request, response);
                 }else{

@@ -8,10 +8,28 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <%@include file="../template/head.jsp" %>
         <title>JSP Page</title>
+        <%String nick=(String)request.getAttribute("nickname");%>
+        <%String email=(String)request.getAttribute("mail");%>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <%@include file="../template/Header.jsp" %>
+        <div class="col-md-3">&nbsp;</div>
+        
+        <div class="col-md-6">
+            <h2><i class="glyphicon glyphicon-user"></i>Nickname:<p><% request.getSession().getAttribute("nickname");%></p></h2>
+            <hr>
+            <h2><i class="glyphicon glyphicon-envelope"></i>Email:<p><% request.getSession().getAttribute("mail");%></p></h2>
+            <hr>
+            <br>
+            <p><a href="listGames.jsp">Back!</a></p>
+        </div>
+        
+        
+        
+        
+        <div class="col-md-3">&nbsp;</div>
+        <%@include file="../template/Footer.jsp" %>
     </body>
 </html>
