@@ -32,9 +32,9 @@
                     <button type="submit" class="btn btn-default">Send</button>
                 </form>
                 <%} else { %>
-                <jsp:forward page="Controlador?accio=login"/>
+                <jsp:forward page="GestorUsuarios?accio=login"/>
                 <%}%>
-                <p>if you haven't an account, <a href="Insertar.jsp">sign in!</a></p>
+                <p>if you haven't an account, <a href="InsertarUsuario.jsp">sign in!</a></p>
 
             </div>
 
