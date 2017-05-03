@@ -23,7 +23,8 @@
             <tr><th>Name</th><th>Developer</th></tr>
             <%
                 for (Game game : games) {
-                 System.out.println("<tr><td>"+game.getName()+"</td><td>"+game.getDeveloper()+"</td><tr>");  
+                 out.println("<tr><td>"+game.getName()+"</td><td>"+game.getDeveloper()+"</td><td><a href='../../GestorGames?name="
+                         +game.getName()+"&accio=descargar'><button class='btn btn-alert'>Descargar</button></a><tr>");  
                 }
             %>
         </table>
