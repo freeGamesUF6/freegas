@@ -14,7 +14,7 @@
         <%@include file="../template/head.jsp" %>
     </head>
     <body>
-        <!-- aaTable games-->
+        <!-- Table games-->
         <%@include file="../template/Header.jsp" %>
         <%
             GameDAO gd=new GameDAO();
