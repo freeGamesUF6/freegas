@@ -39,13 +39,15 @@
                     </div>
                     <button type="submit" class="btn btn-default">Send</button>
                     </div>
+                    <p>if you have an account, <a href="formularioLogin.jsp">log in!</a></p>
                 </form>
+            
             </div>
             <div class="col-md-3">&nbsp;</div>
             <%@include file="../template/Footer.jsp" %>
             
             <%}else{ %>
-            <jsp:forward page="Controlador?accio=singin"/>
+            <jsp:forward page="GestorUsuarios?accio=singin"/>
             <%}%>
 
 

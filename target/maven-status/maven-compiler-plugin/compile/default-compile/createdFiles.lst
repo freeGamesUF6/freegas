@@ -1,8 +1,8 @@
 com\freegames\model\Utilitats.class
-com\freegames\model\UserDAO.class
 com\freegames\model\Transaction.class
 com\freegames\model\GameDAO.class
-com\freegames\model\Game.class
 com\freegames\model\TransactionDAO.class
 com\freegames\model\User.class
+com\freegames\model\UserDAO.class
+com\freegames\model\Game.class
 com\freegames\control\GestorProva.class

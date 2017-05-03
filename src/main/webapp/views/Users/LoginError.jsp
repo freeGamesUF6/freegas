@@ -8,10 +8,10 @@
 <%@ page isErrorPage="true" contentType="text/html" %>
 <%--
 RUTAS DE LOS ARCHIVOS EXCEPTION
-<%@page import="control.UsuariRepetitException"%>
-<%@page import="control.PasswordFailException"%>
-
 --%>
+<%@page import="com.freegames.control.UsuariRepetitException"%>
+<%@page import="com.freegames.control.PasswordFailException"%>
+
 <!DOCTYPE html>
 <html>
     <head>

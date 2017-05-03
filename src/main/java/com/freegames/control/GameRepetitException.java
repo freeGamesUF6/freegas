@@ -9,7 +9,7 @@ package com.freegames.control;
  *
  * @author Jhona
  */
-class GameRepetitException extends Exception {
+public class GameRepetitException extends Exception {
 
     public GameRepetitException() {
     }
