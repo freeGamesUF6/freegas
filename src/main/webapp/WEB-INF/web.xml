@@ -4,9 +4,17 @@
         <servlet-name>GestorProva</servlet-name>
         <servlet-class>com.freegames.control.GestorProva</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GestorGames</servlet-name>
+        <servlet-class>com.freegames.control.GestorGames</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>GestorProva</servlet-name>
         <url-pattern>/GestorProva</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GestorGames</servlet-name>
+        <url-pattern>/GestorGames</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
