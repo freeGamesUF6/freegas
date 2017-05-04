@@ -35,7 +35,7 @@
                     </div>
                     <div class="form-group">
                         <label for="email"><i class="glyphicon glyphicon-envelope"></i>Email:</label>
-                        <input type="email" class="form-control" id="password" placeholder="Insert your email here!" name="email" size="30">
+                        <input type="email" class="form-control" id="password" placeholder="Insert your email here!" name="mail" size="30">
                     </div>
                     <button type="submit" class="btn btn-default">Send</button>
                     </div>

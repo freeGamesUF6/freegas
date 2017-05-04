@@ -1,8 +1,14 @@
+com\freegames\control\GestorUsuarios.class
+com\freegames\control\GestorGames.class
 com\freegames\model\Utilitats.class
 com\freegames\model\Transaction.class
 com\freegames\model\GameDAO.class
+com\freegames\control\UsuariRepetitException.class
 com\freegames\model\TransactionDAO.class
 com\freegames\model\User.class
+com\freegames\control\NickErrorException.class
 com\freegames\model\UserDAO.class
 com\freegames\model\Game.class
+com\freegames\control\PasswordFailException.class
+com\freegames\control\GameRepetitException.class
 com\freegames\control\GestorProva.class

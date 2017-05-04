@@ -11,7 +11,7 @@ RUTAS DE LOS ARCHIVOS EXCEPTION
 --%>
 <%@page import="com.freegames.control.UsuariRepetitException"%>
 <%@page import="com.freegames.control.PasswordFailException"%>
-
+<%@page import="com.freegames.control.NickErrorException"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -35,7 +35,14 @@ RUTAS DE LOS ARCHIVOS EXCEPTION
         %><h4>We are sorry, but your nickname is used, you should choose another one!</h4>
             <a href="Insertar.jsp">
                 <button type="submit" class="btn btn-default">Back</button>
-            </a><%;}
+            </a><%;}else{
+                        %>
+            <h4>We are sorry, but your Nickname is wrong, you should try again!</h4>
+            <a href="formulario.jsp">
+                <button type="submit" class="btn btn-default">Back</button>
+            </a>
+        <%
+                        }
         }
       
 %>

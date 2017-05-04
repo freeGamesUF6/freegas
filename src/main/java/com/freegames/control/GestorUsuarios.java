@@ -41,20 +41,25 @@ public class GestorUsuarios extends HttpServlet{
             if (op.equals("login")) {
                 //a traves de usebeans pasem els atributs de l'objecte directament.
                 //User u es el que rebem del formulari
-                User u = (User) request.getAttribute("logueo");
+                
+                User u = (User) request.getAttribute("User"); 
+                System.out.println("Hola controlador "+u);
                 UserDAO uDao =new  UserDAO();
                 //User u2 es el que agafem de la BBDD
                 User u2=uDao.queryUser(u);
                 if(u2!=null){
                     if (u2.getPassword().equals(u.getPassword())) {
-                        //JSP a la que se le redirige si el login es OK!
+                        //Variables de Sesion!
                         request.getSession().setAttribute("mail", u2.getEmail());
                         request.getSession().setAttribute("nickname", u2.getNick());
                         RequestDispatcher rd = request.getRequestDispatcher("listGames.jsp");
+                        //RequestDispatcher rd = request.getRequestDispatcher("prova.jsp");
                         rd.forward(request, response);
                     }else{
                         throw new PasswordFailException();
                     }
+                }else{
+                    throw new NickErrorException();
                 }
                 
                 //si l'accio es singin accedeix aquí
@@ -64,11 +69,12 @@ public class GestorUsuarios extends HttpServlet{
                 User comprovador=uDao.queryUser(u);
                 //comprovem si el nick esta disponible
                 if (comprovador==null) {
-                    //JSP a la que se le redirige si el login es OK!
+                    //Variables de Sesion!
                      
                     request.getSession().setAttribute("mail", comprovador.getEmail());
                     request.getSession().setAttribute("nickname", comprovador.getNick());
                     RequestDispatcher rd = request.getRequestDispatcher("listGames.jsp");
+                    //RequestDispatcher rd = request.getRequestDispatcher("prova.jsp");
                     rd.forward(request, response);
                 }else{
                     throw new UsuariRepetitException();

@@ -16,8 +16,8 @@
         <div class="container-fluid">
 
             <div class="form-inline">
-                <jsp:useBean id="login" scope="request" class="com.freegames.model.User"></jsp:useBean>
-                <jsp:setProperty name="logueo" property="*" />
+                <jsp:useBean id="User" scope="request" class="com.freegames.model.User"></jsp:useBean>
+                <jsp:setProperty name="login" property="*" />
                 <% if (request.getParameter("nick") == null) {%>
 
                 <form role="form" method="post">
