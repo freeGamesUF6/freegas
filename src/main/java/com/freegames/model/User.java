@@ -74,6 +74,16 @@ public class User {
         this.mail = email;
     }
 
+    public Set<Transaction> getGames() {
+        return games;
+    }
+
+    public void setGames(Set<Transaction> games) {
+        this.games = games;
+    }
+    
+    
+
     @Override
     public String toString() {
         return "User{" + "id=" + id + ", nick=" + nick + ", password=" + password + ", email=" + mail + '}';

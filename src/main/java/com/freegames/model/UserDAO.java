@@ -7,6 +7,7 @@ package com.freegames.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
@@ -64,5 +65,15 @@ public class UserDAO {
         
         session.getTransaction().commit();
         return list;
+    }
+    
+    public Set listGamesPerUser(String nick){
+        Set<Transaction> games;
+        Session session = Utilitats.getSessionFactory().openSession();
+        session.beginTransaction();
+        Query query =session.createQuery("from User where nick='"+nick+"'");
+        User user=(User) query.uniqueResult();
+        games=user.getGames();
+        return games;
     }
 }
