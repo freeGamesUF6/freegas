@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package com.freegames.model;
-
+import java.util.Set;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
