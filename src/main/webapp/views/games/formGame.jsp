@@ -14,6 +14,7 @@
     <body>
         <%@include file="../template/Header.jsp" %>
 
+      
         <div class="container-fluid">
            
             <div class="form col-md-6 col-md-offset-3">
@@ -31,12 +32,19 @@
                         <input type="text" class="form-control" id="developer" placeholder="Developer" name="developer" size="30">
                     </div>
                     <div class="form-group">
-                       
-                        hola
-                        <label class="radio-inline"><input class="form-control" id="idcategory" type="radio" value="32" name="idcategory">Option 1</label>
-                        <label class="radio-inline"><input class="form-control" id="idcategory" type="radio" value="32" name="idcategory">Option 2</label>
-                        <label class="radio-inline"><input class="form-control" id="idcategory" type="radio" value="24" name="idcategory">Option 3</label>
+                        <label for="description"><i class="glyphicon glyphicon-user"></i>description</label>
+                        <input type="text" class="form-control" id="description" placeholder="description" name="description" size="30">
                     </div>
+                    <div class="form-group">
+                        <label for="url_img"><i class="glyphicon glyphicon-user"></i>url_img</label>
+                        <input type="text" class="form-control" id="url_img" placeholder="url_img" name="url_img" size="30">
+                    </div>
+                    
+                      <div class="form-group">
+                        <label for="url_download"><i class="glyphicon glyphicon-user"></i>url_download</label>
+                        <input type="text" class="form-control" id="url_download" placeholder="url_download" name="url_download" size="30">
+                    </div>
+             
                     <button type="submit" class="btn btn-default">Send</button>
                     <br />
                     <br />
@@ -51,7 +59,6 @@
 
             </div>
         </div>
-        
             <%@include file="../template/Footer.jsp" %>
 
     </body>
