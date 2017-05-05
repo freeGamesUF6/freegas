@@ -32,7 +32,7 @@
                     </div>
                     <div class="form-group">
                        
-                        
+                        hola
                         <label class="radio-inline"><input class="form-control" id="idcategory" type="radio" value="32" name="idcategory">Option 1</label>
                         <label class="radio-inline"><input class="form-control" id="idcategory" type="radio" value="32" name="idcategory">Option 2</label>
                         <label class="radio-inline"><input class="form-control" id="idcategory" type="radio" value="24" name="idcategory">Option 3</label>
