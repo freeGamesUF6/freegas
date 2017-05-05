@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-mapping>
-  <class name="com.freegames.model.Game" table="game"/>
+    <class name="com.freegames.model.Game" table="game"/>
     <id name="id" type="int">
         <column name="id" precision="5" scale="0" />
         <generator class="assigned" />
@@ -15,11 +15,20 @@
     <property name="idcategory" type="string">
         <column name="idcategory" length="200" not-null="true" />
     </property>
+    <property name="description" type="string">
+        <column name="description" length="200" not-null="true" />
+    </property>
+    <property name="url_img" type="string">
+        <column name="url_img" length="200" not-null="true" />
+    </property>
+    <property name="url_download" type="string">
+        <column name="url_download" length="200" not-null="true" />
+    </property>
     <set name="users" table="Transaction"  cascade="all" inverse="true"  >
-          <key>
-             <column name="idgame"  />
-         </key>
-         <many-to-many column="iduser" class="com.freegames.model.User" />
-        </set>     
-    </class>
+        <key>
+            <column name="idgame"  />
+        </key>
+        <many-to-many column="iduser" class="com.freegames.model.User" />
+    </set>     
+</class>
 </hibernate-mapping>
