@@ -1,7 +1,7 @@
 <%-- 
     Document   : form_game
     Created on : 03-may-2017, 11:10:07
-    Author     : Jhona
+    Author     : Jhonatan
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
