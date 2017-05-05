@@ -17,7 +17,7 @@
 
             <div class="form-inline">
                 <jsp:useBean id="User" scope="request" class="com.freegames.model.User"></jsp:useBean>
-                <jsp:setProperty name="User" property="*" />
+                <jsp:setProperty name="login" property="*" />
                 <% if (request.getParameter("nick") == null) {%>
 
                 <form role="form" method="post">
@@ -32,7 +32,7 @@
                     <button type="submit" class="btn btn-default">Send</button>
                 </form>
                 <%} else { %>
-                <jsp:forward page="/GestorUsuarios?accio=login"/>
+                <jsp:forward page="GestorUsuarios?accio=login"/>
                 <%}%>
                 <p>if you haven't an account, <a href="InsertarUsuario.jsp">sign in!</a></p>
 

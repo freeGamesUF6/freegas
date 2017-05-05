@@ -52,7 +52,7 @@ public class GestorUsuarios extends HttpServlet{
                         //Variables de Sesion!
                         request.getSession().setAttribute("mail", u2.getEmail());
                         request.getSession().setAttribute("nickname", u2.getNick());
-                        RequestDispatcher rd = request.getRequestDispatcher("views/games/listGames.jsp");
+                        RequestDispatcher rd = request.getRequestDispatcher("listGames.jsp");
                         //RequestDispatcher rd = request.getRequestDispatcher("prova.jsp");
                         rd.forward(request, response);
                     }else{
