@@ -41,6 +41,18 @@ public class Game implements Serializable {
         this.developer = developer;
         this.idcategory = category;
     }
+ /*
+    *Constructor para buscar juego por ID
+    *@author: Jhonatan
+    */
+    public Game(int id) {
+        this.id = id;
+    }
+
+
+    
+    
+    
 
     public Game() {
     }
@@ -64,6 +76,29 @@ public class Game implements Serializable {
     public String getCategory() {
         return idcategory;
     }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getUrl_img() {
+        return url_img;
+    }
+
+    public String getUrl_download() {
+        return url_download;
+    }
+
+    public Set<Transaction> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<Transaction> users) {
+        this.users = users;
+    }
+    
+    
+    
     
     //Setters
     public void setId(int id) {
@@ -82,13 +117,25 @@ public class Game implements Serializable {
         this.idcategory = category;
     }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setUrl_img(String url_img) {
+        this.url_img = url_img;
+    }
+
+    public void setUrl_download(String url_download) {
+        this.url_download = url_download;
+    }
+
+    
+    
     @Override
     public String toString() {
-        return "Game{" + "id=" + id + ", name=" + name + ", developer=" + developer + ", category=" + idcategory + '}';
+        return "Game{" + "id=" + id + ", name=" + name + ", developer=" + developer + ", idcategory=" + idcategory + ", description=" + description + ", url_img=" + url_img + ", url_download=" + url_download + '}';
     }
-    
-    
-    
+
     
     
     
