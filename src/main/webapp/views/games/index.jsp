@@ -15,7 +15,8 @@
         <div class="col-md-6 col-md-offset-3">
         <h3>
             <a href="../../GestorGames?accio=alta">Register Game </a>
-            
+            <br />
+             <a href="listGames.jsp">List Games</a>
         </h3>
         </div>
          <%@include file="../template/Footer.jsp" %>
