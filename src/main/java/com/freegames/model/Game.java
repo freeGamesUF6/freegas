@@ -28,6 +28,15 @@ public class Game implements Serializable {
     private String developer;
     @Column(name="idcategory")
     private String idcategory;
+        
+    @Column(name="description")
+    private String description;
+    
+    @Column(name="url_img")
+    private String url_img;
+    
+    @Column(name="url_download")
+    private String url_download;
     @OneToMany(fetch = FetchType.LAZY,mappedBy="idgame",cascade= CascadeType.ALL)
    // @JoinTable(name="transaction")
     private Set<Transaction> users;
