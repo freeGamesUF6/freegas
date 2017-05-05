@@ -58,10 +58,11 @@ public class GameDAO {
         return list;
     }
     
+  
     public static Game queryGame(Game g) {
         Session session = Utilitats.getSessionFactory().openSession();
         session.beginTransaction();
-        Query query = session.createQuery("from Game " +"where name='"+g.getName()+"'");
+        Query query = session.createQuery("from Game " +"where id="+g.getId()+"");
         Game list=(Game) query.uniqueResult();
         
         session.getTransaction().commit();
@@ -74,6 +75,17 @@ public class GameDAO {
         session.save(u);
         session.getTransaction().commit();
 
+    }
+    
+        public Set listUsersPerGame(String name){
+        Set<Transaction> users;
+        Session session = Utilitats.getSessionFactory().openSession();
+        session.beginTransaction();
+        Query query =session.createQuery("from Game where name='"+name+"'");
+        Game gamer=(Game) query.uniqueResult();
+        users=gamer.getUsers();
+        
+        return users;
     }
     
 }
