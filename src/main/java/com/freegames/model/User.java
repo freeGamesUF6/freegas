@@ -37,7 +37,14 @@ public class User {
 
     public User() {
     }
-    
+     /*
+    *Constructor para buscar usuario por email
+    *@author
+    */
+    public User(String nick) {
+        this.nick = nick;
+    }
+
     
 
     //Getters
