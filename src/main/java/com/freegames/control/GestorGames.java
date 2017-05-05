@@ -45,7 +45,7 @@ public class GestorGames extends HttpServlet {
         
         try {
 
-           Session session = Utilitats.getSessionFactory().openSession();
+            Session session = Utilitats.getSessionFactory().openSession();
             String op = request.getParameter("accio");
 
             if (op.equals("alta")) {
@@ -53,22 +53,91 @@ public class GestorGames extends HttpServlet {
                 response.sendRedirect("views/games/formGame.jsp");
 
             } else if (op.equals("insert")) {
-               
-               
-                try{
-                    Game game1 = (Game) request.getAttribute("game");  
-                    GameDAO ud=new GameDAO();
+
+                try {
+                    Game game1 = (Game) request.getAttribute("game");
+                    GameDAO ud = new GameDAO();
 
                     ud.insertGame(game1);
 
-                response.sendRedirect("index.jsp");
-                }catch(Exception e){
+                    response.sendRedirect("index.jsp");
+                } catch (Exception e) {
                     System.out.println("Repetido");
                     //throw new GameRepetitException();
                 }
+            } else if (op.equals("descargar")) {
+
+                try {
+
+                    
+                    String nick = (String) request.getSession().getAttribute("nickname");
+                    
+                    int idGame = Integer.parseInt(request.getParameter("idGame"));
+                   
+
+                    User usAux = new User(nick);
+                    UserDAO Udao = new UserDAO();
+                    User us = Udao.queryUser(usAux);
+
+                    Game gaAux = new Game(idGame);
+                    GameDAO Gdao = new GameDAO();
+                    Game ga = Gdao.queryGame(gaAux);
+
+                    Transaction e = new Transaction();
+                    TransactionDAO ed = new TransactionDAO();
+
+                    e.setIdgame(ga);
+                    e.setIduser(us);
+                    ed.insertTransaction(e);
+
+                    response.sendRedirect("views/games/index.jsp"); //deveria redireccionar al perfil del usuario
+                } catch (Exception e) {
+                    System.out.println("descar errrorrrrrrrrrrrrrrrrrr");
+                    //throw new GameRepetitException();
+                }
+            } else if (op.equals("perfil")) {
+
+                try {
+
+
+                    int idGame = Integer.parseInt(request.getParameter("idGame"));
+                    
+
+                    Game gaAux = new Game(idGame);
+                    GameDAO Gdao = new GameDAO();
+                    Game ga = Gdao.queryGame(gaAux);
+
+                  
+                    request.setAttribute("name", ga.getName());
+                    request.setAttribute("description", ga.getDescription());
+                    request.setAttribute("developer", ga.getDeveloper());
+                    request.setAttribute("img", ga.getUrl_img());
+                    request.setAttribute("url", ga.getUrl_download());
+               
+                    
+                   //Set<Transaction> users=gaAux.getUsers();
+                   
+                      System.out.println("llege aqiiiiiiiii");
+                    //for (Transaction user : users) {
+                       // System.out.println("-"+user.getIduser().getNick());
+                     //   System.out.println("hola caracola");
+                   // }
+
+                     RequestDispatcher rd = request.getRequestDispatcher("views/games/perfil.jsp");
+
+                     rd.forward(request, response);
+                     
+                 
+                   
+
+       
+                } catch (Exception e) {
+                    System.out.println("perfil errrorrrrrrrrrrrrrrrrrr");
+                    //throw new GameRepetitException();
+                }
             }
-             
-            }catch (Exception e) {
+
+        } catch (Exception e) {
             System.out.println("CONTROLADOR!!!!!!" + e);
 
             throw new ServletException(e);
