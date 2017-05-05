@@ -6,6 +6,10 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<br />
+<br />
+<br />
+<br />
 <div class="panel-footer">    
     <div class="footer-content">
         <p> © Copyright 2001-2017 Copyright.es - All Rights Reserved - Legal</p>
