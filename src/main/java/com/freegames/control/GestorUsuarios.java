@@ -67,13 +67,15 @@ public class GestorUsuarios extends HttpServlet{
                 User u = (User) request.getAttribute("registro");
                 UserDAO uDao=new UserDAO();
                 User comprovador=uDao.queryUser(u);
+                System.out.println(u.getEmail());
+                System.out.println(u.getNick());
                 //comprovem si el nick esta disponible
                 if (comprovador==null) {
-                    //Variables de Sesion!
-                     
+                    //Variables de Sesion!     
+                    uDao.insertUser(u);
                     request.getSession().setAttribute("mail", comprovador.getEmail());
                     request.getSession().setAttribute("nickname", comprovador.getNick());
-                    RequestDispatcher rd = request.getRequestDispatcher("listGames.jsp");
+                    RequestDispatcher rd = request.getRequestDispatcher("/views/games/listGames.jsp");
                     //RequestDispatcher rd = request.getRequestDispatcher("prova.jsp");
                     rd.forward(request, response);
                 }else{

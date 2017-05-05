@@ -27,23 +27,32 @@ RUTAS DE LOS ARCHIVOS EXCEPTION
         
         if(exception.getCause() instanceof PasswordFailException){
         %> <h4>We are sorry, but your password is wrong, you should try again!</h4>
-            <a href="formulario.jsp">
+            <a href="formularioLogin.jsp">
                 <button type="submit" class="btn btn-default">Back</button>
             </a><%;}
         else {
             if(exception.getCause() instanceof UsuariRepetitException){
         %><h4>We are sorry, but your nickname is used, you should choose another one!</h4>
-            <a href="Insertar.jsp">
+            <a href="InsertarUsuario.jsp">
                 <button type="submit" class="btn btn-default">Back</button>
             </a><%;}else{
-                        %>
+                        if (exception.getCause() instanceof NickErrorException) {
+                                %>
             <h4>We are sorry, but your Nickname is wrong, you should try again!</h4>
-            <a href="formulario.jsp">
+            <a href="formularioLogin.jsp">
                 <button type="submit" class="btn btn-default">Back</button>
             </a>
         <%
+                            }else{
+                            %>
+            <h4>We are sorry, but something was wrong, you should try again!</h4>
+            <%
+}
+            
+
                         }
         }
+
       
 %>
             
